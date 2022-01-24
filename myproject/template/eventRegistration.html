@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Event Registration
+{% endblock title %}
+
+{% block heading %}
+Event Registration Form
+{% endblock heading %}
+
+{% block  form %}
+<form method="POST" action="{% url 'eventRegistration' %}">
+{% csrf_token %}
+    <div class="form-row m-b-55">
+        <div class="name">Name</div>
+        <div class="value">
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="event_name" placeholder="Event Name">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="event_location" placeholder="Event Location">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">Description</div>
+        <div class="value">
+            <div class="input-group">
+                <input class="input--style-5" type="text" name="event_desc">
+            </div>
+        </div>
+    </div>
+    <div class="form-row m-b-55">
+        <div class="name">Dates</div>
+        <div class="value">
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input type="date"  name="from_date">
+                        <label class="label--desc"> From</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input type="date"  name="to_date">
+                        <label class="label--desc"> To</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row m-b-55">
+        <div class="name">Host</div>
+        <div class="value">
+            <div class="row row-space">
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="text" name="host_email" placeholder="Email">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="input-group-desc">
+                        <input class="input--style-5" type="password" name="host_pw" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="name">Registration Deadline</div>
+        <div class="value">
+            <div class="input-group">
+                <input type="date"  name="deadline_date" >
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center">
+        <button style="align-self: center" class="btn btn--radius-2 btn--red" type="submit">Register</button>
+    </div>
+</form>
+{% endblock form %}

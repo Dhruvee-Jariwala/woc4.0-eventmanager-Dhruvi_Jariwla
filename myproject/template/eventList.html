@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Events
+{% endblock title %}
+
+{% block heading %}
+List of Events
+{% endblock heading %}
+
+{% block form %}
+    <div style="text-align: center">
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Location</th>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Deadline</th>
+            </tr>
+          </thead>
+        {% for event in events  %}
+              <tbody>
+                <tr>
+                  <th scope="row">{{ event.id }}</th>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.location }}</td>
+                    <td>{{ event.from_date }}</td>
+                    <td>{{ event.to_date }}</td>
+                    <td>{{ event.deadline_date }}</td>
+                </tr>
+              </tbody>
+        {% endfor %}
+    </table>
+
+    </div>
+{% endblock form %}

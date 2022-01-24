@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block heading %}
+Event Management
+{% endblock heading %}
+
+{% block form %}
+    <div style="text-align: center">
+        <a style="text-decoration:none" href="/eventRegistration" class="btn btn--radius-2 btn--home" role="button">Event Registration</a><br><br><br>
+        <a style="text-decoration:none" href="/eventList" class="btn btn--radius-2 btn--home2" role="button">List of Events</a><br><br><br>
+        <a style="text-decoration:none" href="/participantRegistration" class="btn btn--radius-2 btn--home" role="button">Participant Registration</a>
+    </div>
+{% endblock form %}
